@@ -1,6 +1,5 @@
 import './style.css';
 
-
 const scoreBoard = [
   {
     name: 'Name: ',
