@@ -11,7 +11,7 @@ In this project, i created the structure of the Leaderboard-list-App.
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://enekwestanley.github.io/To-do-list/dist/)
+[Live Demo Link](https://enekwestanley.github.io/leaderboard/dist/)
 
 
 ## Getting Started
