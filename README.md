@@ -3,7 +3,7 @@
 
 # Description of the project.
 
-In this project, i created the structure of the Leaderboard-list-App.
+In this project, i fetch a list from an API.
 
 ## Built With
 

@@ -110,13 +110,43 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/addScores.js":
+/*!**************************!*\
+  !*** ./src/addScores.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// to add items to the board\nconst addScore = (name, score) => {\n    const scoresItem = document.getElementById('scoreRender');\n    const divItem = document.createElement('div');\n    divItem.classList.add('score-collection');\n    divItem.className = ('score-collection');\n    divItem.innerHTML = `<p class=\"pview\">${name} <span class=\"pviewScore\">${score}</span><p>`;\n    scoresItem.appendChild(divItem);\n  };\n  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addScore);\n\n//# sourceURL=webpack://webpack-demo/./src/addScores.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './refreshScores.js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './submitScores.js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n// disable eslint.\n// // import _ from 'lodash';\n\n\n\n\nObject(function webpackMissingModule() { var e = new Error(\"Cannot find module './refreshScores.js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();\n// to add event listener to the page\nconst refresh = document.querySelector('.btn-refresh');\nrefresh.addEventListener('click', () => {\n  Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './refreshScores.js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())();\n});\n\nconst submitData = document.querySelector('.btn-submit');\nsubmitData.addEventListener('click', () => {\n  const user = document.querySelector('.fname').value;\n  const score = document.querySelector('.score').value;\n  Object(function webpackMissingModule() { var e = new Error(\"Cannot find module './submitScores.js'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }())(user, score);\n});\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _refreshScores_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./refreshScores.js */ \"./src/refreshScores.js\");\n/* harmony import */ var _submitScores_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./submitScores.js */ \"./src/submitScores.js\");\n// disable eslint.\n// // import _ from 'lodash';\n\n\n\n\n(0,_refreshScores_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n// to add event listener to the page\nconst refresh = document.querySelector('.btn-refresh');\nrefresh.addEventListener('click', () => {\n  (0,_refreshScores_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n});\n\nconst submitData = document.querySelector('.btn-submit');\nsubmitData.addEventListener('click', () => {\n  const user = document.querySelector('.fname').value;\n  const score = document.querySelector('.score').value;\n  (0,_submitScores_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(user, score);\n});\n\n//# sourceURL=webpack://webpack-demo/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/refreshScores.js":
+/*!******************************!*\
+  !*** ./src/refreshScores.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _addScores_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addScores.js */ \"./src/addScores.js\");\n// disable eslint\n\n\n// to get data from the api\nconst renderScores = () => {\n  const scoresItem = document.getElementById('scoreRender');\n  scoresItem.innerHTML = '';\n  const getScores = async () => {\n    const request = await fetch(\n      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/zl4d7ivkemottvg2fudz/scores/',\n    );\n    // console.log(request)\n    const data = await request.json();\n    return data.result;\n  };\n\n  getScores().then(\n    (value) => {\n      value.forEach((score, id) => {\n        (0,_addScores_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(score.user, score.score, id);\n      });\n    },\n    (error) => {\n      throw error;\n    },\n  );\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (renderScores);\n\n//# sourceURL=webpack://webpack-demo/./src/refreshScores.js?");
+
+/***/ }),
+
+/***/ "./src/submitScores.js":
+/*!*****************************!*\
+  !*** ./src/submitScores.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _refreshScores_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./refreshScores.js */ \"./src/refreshScores.js\");\n// disable eslint.\n\n\n// to send data to the api\nconst submit = (user, score) => {\n  if (user || score !== '') {\n    const sentToApi = async () => {\n      const request = await fetch(\n        'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/zl4d7ivkemottvg2fudz/scores/',\n        {\n          method: 'POST',\n          body: JSON.stringify({\n            user: `${user}`,\n            score,\n          }),\n          headers: {\n            'Content-type': 'application/json; charset=UTF-8',\n          },\n        },\n      );\n      return request.status;\n    };\n    sentToApi()\n      .then((res) => res)\n      .then(() => {\n        (0,_refreshScores_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n      });\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (submit);\n\n//# sourceURL=webpack://webpack-demo/./src/submitScores.js?");
 
 /***/ })
 
