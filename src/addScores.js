@@ -7,4 +7,4 @@ const addScore = (name, score) => {
     divItem.innerHTML = `<p class="pview">${name} <span class="pviewScore">${score}</span><p>`;
     scoresItem.appendChild(divItem);
   };
-  export default addScore;
+  export default addSc
