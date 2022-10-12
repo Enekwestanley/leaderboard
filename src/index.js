@@ -2,7 +2,7 @@
 // // import _ from 'lodash';
 import './style.css';
 import renderScores from './refreshScores.js';
-import submit from './submitscores.js';
+import submit from './submitScores.js';
 
 renderScores();
 // to add event listener to the page
