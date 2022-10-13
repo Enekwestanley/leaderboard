@@ -3,7 +3,7 @@
 
 # Description of the project.
 
-In this project, i fetch a list from an API.
+The Leader-Board-list is a simple app built with JavaScript. It makes use of an involvement API to store and retrieve scores of players of any game. The UI is user friendly.
 
 ## Built With
 
