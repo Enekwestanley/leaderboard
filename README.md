@@ -3,7 +3,7 @@
 
 # Description of the project.
 
-In this project, i created the structure of the Leaderboard-list-App.
+In this project, i fetch a list from an API.
 
 ## Built With
 
@@ -16,7 +16,10 @@ In this project, i created the structure of the Leaderboard-list-App.
 
 ## Getting Started
 
-Clone the Repo and power on the live-server to view the page or click on the live demo link.
+- git clone the Url
+- cd leaderboard
+- npm install
+- npm start
 
 ## Authors:
 
