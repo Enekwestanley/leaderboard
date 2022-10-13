@@ -1,4 +1,3 @@
-// disable eslint
 import addScore from './addScores.js';
 
 // to get data from the api
@@ -7,23 +6,16 @@ const renderScores = () => {
   scoresItem.innerHTML = '';
   const getScores = async () => {
     const request = await fetch(
-      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/zl4d7ivkemottvg2fudz/scores/',
+      'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/zl4d7ivkemo/scores/',
     );
-    // console.log(request)
     const data = await request.json();
+    const score = data.result;
+
+    score.forEach((element) => {
+      addScore(element.user, element.score);
+    });
     return data.result;
   };
-
-  getScores().then(
-    (value) => {
-      value.forEach((score, id) => {
-        addScore(score.user, score.score, id);
-      });
-    },
-    (error) => {
-      throw error;
-    },
-  );
+  getScores();
 };
-
 export default renderScores;

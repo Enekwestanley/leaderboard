@@ -16,8 +16,10 @@ In this project, i fetch a list from an API.
 
 ## Getting Started
 
-Clone the Repo and power on the live-server to view the page or click on the live demo link.
-
+- git clone the Url
+- cd leaderboard
+- npm install
+- npm start
 ## Authors:
 
 👤 **Stanley Tochukwu Enekwe:**

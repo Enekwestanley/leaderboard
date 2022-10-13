@@ -1,4 +1,3 @@
-// disable eslint.
 // // import _ from 'lodash';
 import './style.css';
 import renderScores from './refreshScores.js';
@@ -11,9 +10,11 @@ refresh.addEventListener('click', () => {
   renderScores();
 });
 
-const submitData = document.querySelector('.btn-submit');
-submitData.addEventListener('click', () => {
+const submitData = document.querySelector('#div2');
+submitData.addEventListener('submit', (e) => {
+  e.preventDefault();
   const user = document.querySelector('.fname').value;
   const score = document.querySelector('.score').value;
   submit(user, score);
+  submitData.reset();
 });
