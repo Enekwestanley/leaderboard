@@ -20,6 +20,7 @@ In this project, i fetch a list from an API.
 - cd leaderboard
 - npm install
 - npm start
+
 ## Authors:
 
 👤 **Stanley Tochukwu Enekwe:**
